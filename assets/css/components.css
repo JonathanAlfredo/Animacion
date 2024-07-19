@@ -1,0 +1,51 @@
+/* Component styles */
+.form {
+    display: flex;
+    flex-direction: column;
+}
+  
+.form input {
+padding: 10px;
+margin-bottom: 15px;
+border: 1px solid #ccc;
+border-radius: 5px;
+font-size: 16px;
+}
+
+.form input:focus {
+border-color: #007bff;
+outline: none;
+}
+
+.form .btn-primary {
+padding: 10px;
+border: none;
+border-radius: 5px;
+background-color: #007bff;
+color: white;
+font-size: 16px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.form .btn-primary:hover {
+background-color: #0056b3;
+}
+
+.form .link {
+display: block;
+text-align: center;
+margin-top: 15px;
+color: #007bff;
+}
+
+.form .link:hover {
+text-decoration: underline;
+}
+
+.card img {
+display: block;
+max-width: 100%;
+height: auto;
+margin: 0 auto 20px;
+}

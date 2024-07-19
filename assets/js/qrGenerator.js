@@ -17,25 +17,4 @@ function generateQRCode(id) {
     }
 }
 
-
-
-    function onScanSuccess(decodedText, decodedResult) {
-        document.getElementById("qr-reader-results").innerText = `Scanned result: ${decodedText}`;
-    }
-
-    function onScanFailure(error) {
-        console.warn(`Code scan error = ${error}`);
-    }
-
-    let html5QrCode = new Html5Qrcode("qr-reader");
-    html5QrCode.start(
-        { facingMode: "environment" }, 
-        {
-            fps: 10, 
-            qrbox: 250 
-        },
-        onScanSuccess,
-        onScanFailure
-    ).catch(err => {
-        console.error(`Unable to start scanning, error: ${err}`);
-    });
+generateQRCode("12345");

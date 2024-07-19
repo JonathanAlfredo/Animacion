@@ -8,35 +8,21 @@
     <link rel="stylesheet" href="assets/css/layout.css">
     <link rel="stylesheet" href="assets/css/components.css">
     <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
-    <script src="https://unpkg.com/html5-qrcode"></script>    
+    <script src="https://unpkg.com/html5-qrcode"></script>
 </head>
 <body>
     <div class="container full-height centered">
         <div class="card">    
             <div>
                 <div id="qr-code"></div>
-                
             </div>
-            
             <div>
-                <div id="qr-reader"></div>
+                <div id="qr-reader" style="max-width:500px;"></div>
                 <div id="qr-reader-results"></div>
             </div>
-           
         </div>
     </div>
-
     <script src="assets/js/qrGenerator.js"></script>
-
-
-    
-    
-    <script>
-        generateQRCode('12345');
-
-    </script>
-
-
-   
+    <script src="assets/js/qrScanner.js"></script>
 </body>
 </html>

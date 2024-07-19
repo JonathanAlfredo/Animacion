@@ -49,3 +49,27 @@ max-width: 100%;
 height: auto;
 margin: 0 auto 20px;
 }
+
+#qr-code {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  #qr-reader {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  #qr-reader-results {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+  }

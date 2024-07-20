@@ -17,12 +17,39 @@
   }
   
   .card {
-    background-color: #4b0b69;
+    background-color: #4b056cda;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
     box-sizing: border-box;
+    color: aliceblue;
+    text-align: center;
+
+
   }
+  .inner-card{
+    text-align: left;
+    align-items: center;
+    display: flex;
+
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    color: aliceblue;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px;
+  }
+
+  .inner-card .icon{
+    height: 60px;
+    margin: 0px;
+    margin-right: 20px;
+  }
+
   

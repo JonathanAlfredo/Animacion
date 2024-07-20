@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/layout.css">
+    <link rel="stylesheet" href="assets/css/components.css">
+</head>
+<body>
+    <div class="container centered">
+        <div class="card" style="text-align: left;">
+            <a href="menu.html">Regresar</a>
+            <img src="assets/imgs/usuariofoto.png" alt="" class="profile-foto">
+
+            <form action="" class="form" method="POST">
+
+                <label >Nombre(s):</label>
+                <input type="text" name="nombre" required>
+
+                <label >Apellido Paterno:</label>
+                <input type="text" name="apPaterno" required>
+
+                <label >Apellido Materno:</label>
+                <input type="text" name="apMaterno" required>
+
+                <label >Matricula:</label>
+                <input type="text" name="idPersona" inputmode="numeric" pattern="\d*" required readonly/>
+
+                <label >Carrera:</label>
+                <select name="carrera" required>
+                    <option value="">Seleccionar</option>
+                    <option value="alumno">Ing. en Sistemas Computacionales</option>
+                    <option value="maestro">Ing. en Diseño y Efectos Especiales</option>
+                </select>
+
+                <label >Numero Celular:</label required>
+                <input type="text" name="numeroCelular" inputmode="numeric" pattern="\d*">
+
+                <label >Correo:</label>
+                <input type="email" name="correo" required>
+
+                <label >Nombre(s) del Tutor:</label>
+                <input type="text" name="nombreT" required>
+
+                <label >Apellido Paterno del Tutor:</label>
+                <input type="text" name="apPaternoT" required>
+
+                <label >Apellido Materno del Tutor:</label>
+                <input type="text" name="apMaternoT" required>
+
+                <label >Numero Celular del Tutor:</label>
+                <input type="text" name="numeroCelularT" inputmode="numeric" pattern="\d*" required>
+
+
+                <button type="submit" class="btn-primary">Actualizar Datos</button>
+                <a href="ejemplo-qr.html" class="link">QR del Alumno</a>
+
+                    
+            </form>
+        </div>
+    </div>
+</body>
+</html>

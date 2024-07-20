@@ -10,7 +10,13 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+
+  background-image: url("../imgs/fondo-celular.png");
+  background-repeat: no-repeat, repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
 }
 
 a {
@@ -23,6 +29,4 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 1rem;
 }
 
-p {
-  margin-bottom: 1rem;
-}
+

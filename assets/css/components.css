@@ -4,13 +4,15 @@
     flex-direction: column;
 }
   
-.form input {
-padding: 10px;
-margin-bottom: 15px;
-border: 1px solid #ccc;
-border-radius: 5px;
-font-size: 16px;
+.form input, select {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
 }
+
+
 
 .form input:focus {
 border-color: #007bff;
@@ -48,4 +50,9 @@ display: block;
 max-width: 100%;
 height: auto;
 margin: 0 auto 20px;
+}
+
+.card .profile-foto {
+    border-radius: 50%;
+    filter: drop-shadow(0 0 0.70rem #c8f8b1);
 }

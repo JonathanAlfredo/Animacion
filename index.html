@@ -9,14 +9,14 @@
     <link rel="stylesheet" href="assets/css/components.css">
 </head>
 <body>
-    <div class="container full-height centered">
+    <div class="container centered">
         <div class="card">
             <img src="assets/imgs/image.png" alt="logo">
             <form action="" method="POST" class="form">
-                <input type="text" name="idPersona" placeholder="Matricula" required>
+                <input type="text" name="idPersona" inputmode="numeric" pattern="\d*" placeholder="Matricula" required  />
                 <input type="password" name="password" placeholder="Contraseña" required>
                 <button type="submit" class="btn-primary">Iniciar Sesión</button>
-                <a href="" class="link">Crear Cuenta</a>
+                <a href="registro.html" class="link">Crear Cuenta</a>
             </form>
         </div>
     </div>

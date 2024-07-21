@@ -55,7 +55,7 @@ verifySesion(false);
                     <p>QR.Compañeros</p>
                 </div>
             </a>
-            <a href="index.php?exit=true">Salir</a>
+            <a href="index.php?exit=true">Cerra Sesion</a>
 
 
         </div>

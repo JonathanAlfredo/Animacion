@@ -41,7 +41,7 @@ $pdo = Database::getInstance();
         }
 
         try {        
-            $sql = "SELECT t.nombre as nombreT, t.apPaterno as apPaternoT, t.apMaterno as apMaternoT, t.telefono as telefonoT\n"
+            $sql = "SELECT e.idTutor, t.nombre as nombreT, t.apPaterno as apPaternoT, t.apMaterno as apMaternoT, t.telefono as telefonoT\n"
                 . "FROM Persona p \n"
                 . "JOIN Expediente e ON p.idPersona = e.idPersona\n"
                 . "JOIN Persona t ON e.idTutor = t.idPersona\n"
@@ -63,9 +63,9 @@ $pdo = Database::getInstance();
         <div class="card" style="text-align: left;">
             
             <a href="menu.php">Regresar</a>
-            <img src="<?php echo ($datosPersona['imagen'] == '' ? 'assets/imgs/usuariofoto.png' : '' );?>" alt="" class="profile-foto">
+            <img src="<?php echo ($datosPersona['imagen'] == '' ? 'assets/imgs/usuariofoto.png' : $datosPersona['imagen'] );?>" alt="Foto de Perfil" class="profile-foto">
 
-            <form action="" class="form" method="POST" enctype="multipart/form-data">
+            <form action="controller/actualizarDatos.php" class="form" method="POST" enctype="multipart/form-data">
                 <label >Matricula:</label>
                 <input type="text" name="idPersona" inputmode="numeric" pattern="\d*" required readonly value="<?php echo $idPersona; ?>"/>
 
@@ -96,7 +96,7 @@ $pdo = Database::getInstance();
                 <label >Carrera:</label>
                 <?php
                     echo "
-                    <select name='idTipoCarrera' required>
+                    <select name='idCarrera' required>
                     <option value='' ". ($datosPersona['idCarrera'] == '' ? 'selected' : '') .">Seleccionar</option>
                     ";
                     try {
@@ -113,10 +113,12 @@ $pdo = Database::getInstance();
                 
 
                 <label >Numero Celular:</label required>
-                <input type="text" name="numeroCelular" inputmode="numeric" pattern="\d*" value="<?php echo $datosPersona['telefono'];?>">
+                <input type="text" name="telefono" inputmode="numeric" pattern="\d*" value="<?php echo $datosPersona['telefono'];?>">
 
                 <label >Correo:</label>
                 <input type="email" name="correo" required value="<?php echo $datosPersona['correo'];?>">
+
+                <input type="hidden" name="idTutor" required value="<?php echo $datosTutor['idTutor'];?>">
 
                 <label >Nombre(s) del Tutor:</label>
                 <input type="text" name="nombreT" required value="<?php echo $datosTutor['nombreT'];?>">

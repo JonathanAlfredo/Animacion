@@ -23,6 +23,19 @@ class UsuarioDAO {
         }
     }
 
+    public function actualizarImagen($idPersona,$imagen) {
+        try {
+            $sql = "UPDATE Usuario SET imagen = :imagen WHERE idPersona = :idPersona";
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->bindParam(':imagen', $imagen);
+            $stmt->bindParam(':idPersona', $idPersona);
+            return $stmt->execute();
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+            return false;
+        }
+    }
+
     public function autenticarUsuario($idPersona, $pass) {
         try {
             $sql = "SELECT * FROM Usuario WHERE idPersona = :idPersona";

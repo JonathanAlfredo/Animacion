@@ -24,7 +24,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($personaInsertada) {
         $usuarioInsertado = $usuarioDAO->insertarUsuario($idPersona, $pass,1);
-        $expedienteInsertado = $expedienteDAO->insertarExpediente($idPersona,"","","","","","","","","","");
+        $expedienteInsertado = $expedienteDAO->insertarExpediente($idPersona);
 
         if ($usuarioInsertado && $expedienteInsertado) {
             header('Location: ../index.php?success=true');

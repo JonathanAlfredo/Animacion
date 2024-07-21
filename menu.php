@@ -1,3 +1,9 @@
+<?php
+include 'controller/sesionManager.php';
+
+verifySesion(false);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +18,7 @@
     <div class="container full-height centered">
 
         <div class="card" >
-            <a href="perfil.html">
+            <a href="perfil.php">
                 <div class="inner-card" style="background-color: #e7c8f2; color: #8f12d8;">
                     <img src="assets/imgs/usuariofoto.png" alt="" class="icon">
                     <p>Perfil</p>
@@ -49,6 +55,7 @@
                     <p>QR.Compañeros</p>
                 </div>
             </a>
+            <a href="index.php?exit=true">Salir</a>
 
 
         </div>

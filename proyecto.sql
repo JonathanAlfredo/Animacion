@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 20-07-2024 a las 03:36:44
+-- Tiempo de generación: 21-07-2024 a las 08:09:47
 -- Versión del servidor: 10.4.28-MariaDB
 -- Versión de PHP: 8.2.4
 
@@ -43,6 +43,13 @@ CREATE TABLE `Carrera` (
   `nombre` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `Carrera`
+--
+
+INSERT INTO `Carrera` (`idCarrera`, `nombre`) VALUES
+(1, 'Ing. en Sistemas Computacionales');
+
 -- --------------------------------------------------------
 
 --
@@ -53,6 +60,16 @@ CREATE TABLE `EstadoCivil` (
   `idEstadoCivil` int(11) NOT NULL,
   `estado` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `EstadoCivil`
+--
+
+INSERT INTO `EstadoCivil` (`idEstadoCivil`, `estado`) VALUES
+(1, 'Soltero(a)'),
+(2, 'Casado(a)'),
+(3, 'Viudo(a)'),
+(4, 'Divorciado(a)');
 
 -- --------------------------------------------------------
 
@@ -87,6 +104,13 @@ CREATE TABLE `Expediente` (
   `idTutor` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `Expediente`
+--
+
+INSERT INTO `Expediente` (`idPersona`, `nss`, `vigenciaDerechos`, `tipoSangre`, `fechaNacimiento`, `direccion`, `condMedicas`, `clinica`, `idEstadoCivil`, `idCarrera`, `idTutor`) VALUES
+(2021451014, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL);
+
 -- --------------------------------------------------------
 
 --
@@ -103,6 +127,14 @@ CREATE TABLE `Persona` (
   `sexo` varchar(10) DEFAULT NULL,
   `idTipoPersona` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `Persona`
+--
+
+INSERT INTO `Persona` (`idPersona`, `nombre`, `apPaterno`, `apMaterno`, `telefono`, `correo`, `sexo`, `idTipoPersona`) VALUES
+(1, 'Jhon', 'Doe', 'N', '123456789', 'jhondoe@gmail.com', 'M', 1),
+(2021451014, '', '', '', '', '2021451014@teschi.edu.mx', '', 1);
 
 -- --------------------------------------------------------
 
@@ -132,6 +164,14 @@ CREATE TABLE `Rol` (
   `rol` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `Rol`
+--
+
+INSERT INTO `Rol` (`idRol`, `rol`) VALUES
+(1, 'Usuario'),
+(2, 'Administrador');
+
 -- --------------------------------------------------------
 
 --
@@ -143,6 +183,15 @@ CREATE TABLE `TipoIncidente` (
   `tipo` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Volcado de datos para la tabla `TipoIncidente`
+--
+
+INSERT INTO `TipoIncidente` (`idTipoIncidente`, `tipo`) VALUES
+(1, 'Medico'),
+(2, 'Robo'),
+(3, 'Accidente');
+
 -- --------------------------------------------------------
 
 --
@@ -153,6 +202,14 @@ CREATE TABLE `TipoPersona` (
   `idTipoPersona` int(11) NOT NULL,
   `tipo` varchar(100) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `TipoPersona`
+--
+
+INSERT INTO `TipoPersona` (`idTipoPersona`, `tipo`) VALUES
+(1, 'Estudiante'),
+(2, 'Maestro');
 
 -- --------------------------------------------------------
 
@@ -166,6 +223,14 @@ CREATE TABLE `Usuario` (
   `imagen` varchar(255) DEFAULT NULL,
   `idRol` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `Usuario`
+--
+
+INSERT INTO `Usuario` (`idPersona`, `pass`, `imagen`, `idRol`) VALUES
+(1, '1234', NULL, NULL),
+(2021451014, '$2y$10$UB1mSqlXky9KV8rRe9rCu.7s73qSuWbzhmXSRsgx6ecLgWPK2reZW', NULL, 1);
 
 --
 -- Índices para tablas volcadas
@@ -255,13 +320,13 @@ ALTER TABLE `Usuario`
 -- AUTO_INCREMENT de la tabla `Carrera`
 --
 ALTER TABLE `Carrera`
-  MODIFY `idCarrera` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idCarrera` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `EstadoCivil`
 --
 ALTER TABLE `EstadoCivil`
-  MODIFY `idEstadoCivil` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idEstadoCivil` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de la tabla `Evento`
@@ -279,19 +344,19 @@ ALTER TABLE `Reporte`
 -- AUTO_INCREMENT de la tabla `Rol`
 --
 ALTER TABLE `Rol`
-  MODIFY `idRol` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idRol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `TipoIncidente`
 --
 ALTER TABLE `TipoIncidente`
-  MODIFY `idTipoIncidente` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idTipoIncidente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `TipoPersona`
 --
 ALTER TABLE `TipoPersona`
-  MODIFY `idTipoPersona` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `idTipoPersona` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas

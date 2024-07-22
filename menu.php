@@ -49,7 +49,7 @@ verifySesion(false);
                     <p>Reportes</p>
                 </div>
             </a>
-            <a href="">
+            <a href="compañeros.php">
                 <div class="inner-card" style="background-color: #9afe81; color: #1c7f03;">
                     <img src="assets/imgs/icono1.png" alt="" class="icon">
                     <p>QR.Compañeros</p>

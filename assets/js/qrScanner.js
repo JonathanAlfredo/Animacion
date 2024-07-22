@@ -9,13 +9,18 @@ function docReady(fn) {
 docReady(function () {
     var resultContainer = document.getElementById('qr-reader-results');
     var lastResult, countResults = 0;
+    var form = document.getElementById('reporte');
 
     function onScanSuccess(decodedText, decodedResult) {
         if (decodedText !== lastResult) {
+
             ++countResults;
             lastResult = decodedText;
+
             console.log(`Scan result ${decodedText}`, decodedResult);
-            resultContainer.innerText = `Scan result: ${decodedText}`;
+            
+            window.location.href = `reporte.php?person=${decodedText}`;
+            
         }
     }
 
@@ -23,3 +28,6 @@ docReady(function () {
         "qr-reader", { fps: 10, qrbox: 250 });
     html5QrcodeScanner.render(onScanSuccess);
 });
+
+
+

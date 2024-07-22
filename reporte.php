@@ -29,9 +29,10 @@ $idPersona = isset($_GET['person']) ? $_GET['person'] : 'Desconocido';
         
             $sql = " 
             SELECT CONCAT(p.nombre,' ',p.apPaterno,' ',p.apMaterno) as nombre,
-            e.nss, e.clinica, e.direccion, p.sexo
+            e.nss, e.clinica, e.direccion, p.sexo, u.imagen
             FROM persona p
             JOIN expediente e ON e.idPersona = p.idPersona
+            JOIN usuario u ON u.idPersona = p.idPersona
             WHERE p.idPersona = :idPersona;
             ";
         
@@ -52,7 +53,7 @@ $idPersona = isset($_GET['person']) ? $_GET['person'] : 'Desconocido';
 
     ?>
 
-    <div class="container full-height centered">
+    <div class="container centered">
         <div class="card" style="text-align: left;">  
             
         
@@ -60,6 +61,8 @@ $idPersona = isset($_GET['person']) ? $_GET['person'] : 'Desconocido';
             <div class="title">
                 <h1>Realizar reporte</h1>
             </div>
+            <img src="<?php echo ($datosPersona['imagen'] == '' ? 'assets/imgs/usuariofoto.png' : $datosPersona['imagen'] );?>" alt="Foto de Perfil" class="profile-foto">
+
 
             <br><p >Nombre: <?php echo $datosPersona['nombre'];?></p>
             <br><p >Numero de Seguro Social: <?php echo $datosPersona['nss'];?> </p>

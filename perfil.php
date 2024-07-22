@@ -44,7 +44,7 @@ $pdo = Database::getInstance();
 
     
 
-    <div class="container full-height centered">
+    <div class="container  centered">
         <div class="card" style="text-align: left;">
             
             

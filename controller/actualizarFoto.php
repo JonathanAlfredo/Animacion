@@ -29,11 +29,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "Error en la subida del archivo.";
     }
-
-
-    
-
-
     
     $personaDAO = new PersonaDAO();
     $usuarioDAO = new UsuarioDAO();

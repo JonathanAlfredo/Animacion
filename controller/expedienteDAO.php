@@ -49,6 +49,23 @@ class ExpedienteDAO {
             return false;
         }
     }
+    
+    public function actualizarDatosExpediente($idPersona, $fechaNacimiento, $idEstadoCivil, $tipoSangre, $condMedicas) {
+        try {
+            $sql = "UPDATE expediente Set fechaNacimiento = :fechaNacimiento, idEstadoCivil = :idEstadoCivil, tipoSangre = :tipoSangre, condMedicas = :condMedicas WHERE idPersona = :idPersona";
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->bindParam(':fechaNacimiento', $fechaNacimiento);
+            $stmt->bindParam(':idEstadoCivil', $idEstadoCivil);
+            $stmt->bindParam(':tipoSangre', $tipoSangre);
+            $stmt->bindParam(':condMedicas', $condMedicas);
+            $stmt->bindParam(':idPersona', $idPersona);
+            return $stmt->execute();
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+            return false;
+        }
+    }
+    
 
 
     

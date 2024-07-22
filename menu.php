@@ -15,7 +15,7 @@ verifySesion(false);
     <link rel="stylesheet" href="assets/css/components.css">
 </head>
 <body>
-    <div class="container full-height centered">
+    <div class="container  centered">
 
         <div class="card" >
             <a href="perfil.php">
@@ -37,7 +37,7 @@ verifySesion(false);
                     <p>Datos Personales</p>
                 </div>
             </a>
-            <a href="">
+            <a href="expediente.php">
                 <div class="inner-card" style="background-color: #ffa217; color: #895403;">
                     <img src="assets/imgs/Datossalud.png" alt="" class="icon">
                     <p>Expediente</p>
@@ -53,6 +53,18 @@ verifySesion(false);
                 <div class="inner-card" style="background-color: #9afe81; color: #1c7f03;">
                     <img src="assets/imgs/icono1.png" alt="" class="icon">
                     <p>QR.Compañeros</p>
+                </div>
+            </a>
+            <a href="">
+                <div class="inner-card" style="background-color: #f2e255; color: #8a902b;">
+                    <img src="assets/imgs/Documentos.png" alt="" class="icon">
+                    <p>Pase de Asistencia</p>
+                </div>
+            </a>
+            <a href="">
+                <div class="inner-card" style="background-color: #9afe81; color: #1c7f03;">
+                    <img src="assets/imgs/Documentos.png" alt="" class="icon">
+                    <p>Reportes Recibidos</p>
                 </div>
             </a>
             <a href="index.php?exit=true">Cerra Sesion</a>

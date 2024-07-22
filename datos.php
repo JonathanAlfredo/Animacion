@@ -62,10 +62,13 @@ $pdo = Database::getInstance();
     <div class="container centered">
         <div class="card" style="text-align: left;">
             
-            <a href="menu.php">Regresar</a>
+            <a href="menu.php">Regresar</a><br>
+
+            <div class="title">
+                <h1>Datos Personales</h1>
+            </div> 
 
             <form action="controller/actualizarDatos.php" class="form" method="POST" enctype="multipart/form-data">
-                <br>
                 <label >Matricula:</label>
                 <input type="text" name="idPersona" inputmode="numeric" pattern="\d*" required readonly value="<?php echo $idPersona; ?>"/>
 

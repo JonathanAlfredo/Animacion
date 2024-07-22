@@ -42,10 +42,18 @@ $pdo = Database::getInstance();
 
     ?>
 
+    
+
     <div class="container full-height centered">
         <div class="card" style="text-align: left;">
             
+            
+         
+
             <a href="menu.php">Regresar</a>
+            <div class="title">
+                <h1>Perfil</h1>
+            </div> 
             <img src="<?php echo ($datosPersona['imagen'] == '' ? 'assets/imgs/usuariofoto.png' : $datosPersona['imagen'] );?>" alt="Foto de Perfil" class="profile-foto">
 
             <br><p >Nombre(s): <?php echo $datosPersona['nombre'];?></p>

@@ -31,7 +31,7 @@ verifySesion(false);
                     <p>Emergencias</p>
                 </div>
             </a>
-            <a href="">
+            <a href="datos.php">
                 <div class="inner-card" style="background-color: #64a2ff; color: #0172cf;">
                     <img src="assets/imgs/seguridad.png" alt="" class="icon">
                     <p>Datos Personales</p>

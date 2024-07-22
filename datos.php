@@ -23,9 +23,9 @@ $pdo = Database::getInstance();
         
             $sql = "
                 SELECT p.nombre, p.apPaterno, p.apMaterno, p.sexo, e.idCarrera, p.telefono, p.correo, u.imagen
-                FROM Persona p
-                JOIN Expediente e ON p.idPersona = e.idPersona
-                JOIN Usuario u ON p.idPersona = u.idPersona
+                FROM persona p
+                JOIN expediente e ON p.idPersona = e.idPersona
+                JOIN usuario u ON p.idPersona = u.idPersona
                 WHERE p.idPersona = :idPersona
             ";
         
@@ -42,9 +42,9 @@ $pdo = Database::getInstance();
 
         try {        
             $sql = "SELECT e.idTutor, t.nombre as nombreT, t.apPaterno as apPaternoT, t.apMaterno as apMaternoT, t.telefono as telefonoT\n"
-                . "FROM Persona p \n"
-                . "JOIN Expediente e ON p.idPersona = e.idPersona\n"
-                . "JOIN Persona t ON e.idTutor = t.idPersona\n"
+                . "FROM persona p \n"
+                . "JOIN expediente e ON p.idPersona = e.idPersona\n"
+                . "JOIN persona t ON e.idTutor = t.idPersona\n"
                 . "WHERE p.idPersona =:idPersona";
         
             $stmt = $pdo->prepare($sql);

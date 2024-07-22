@@ -11,7 +11,7 @@ class UsuarioDAO {
     public function insertarUsuario($idPersona, $pass, $idRol) {
         try {
             $hash = password_hash($pass, PASSWORD_DEFAULT); 
-            $sql = "INSERT INTO Usuario (idPersona, pass, idRol) VALUES (:idPersona, :pass, :idRol)";
+            $sql = "INSERT INTO usuario (idPersona, pass, idRol) VALUES (:idPersona, :pass, :idRol)";
             $stmt = $this->pdo->prepare($sql);
             $stmt->bindParam(':idPersona', $idPersona);
             $stmt->bindParam(':pass', $hash);
@@ -25,7 +25,7 @@ class UsuarioDAO {
 
     public function actualizarImagen($idPersona,$imagen) {
         try {
-            $sql = "UPDATE Usuario SET imagen = :imagen WHERE idPersona = :idPersona";
+            $sql = "UPDATE usuario SET imagen = :imagen WHERE idPersona = :idPersona";
             $stmt = $this->pdo->prepare($sql);
             $stmt->bindParam(':imagen', $imagen);
             $stmt->bindParam(':idPersona', $idPersona);
@@ -38,7 +38,7 @@ class UsuarioDAO {
 
     public function autenticarUsuario($idPersona, $pass) {
         try {
-            $sql = "SELECT * FROM Usuario WHERE idPersona = :idPersona";
+            $sql = "SELECT * FROM usuario WHERE idPersona = :idPersona";
             $stmt = $this->pdo->prepare($sql);
             $stmt->bindParam(':idPersona', $idPersona);
             $stmt->execute();

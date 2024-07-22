@@ -10,7 +10,7 @@ class ExpedienteDAO {
 
     public function insertarExpediente($idPersona) {
         try {
-            $sql = "INSERT INTO Expediente (idPersona) 
+            $sql = "INSERT INTO expediente (idPersona) 
                     VALUES (:idPersona)";
             $stmt = $this->pdo->prepare($sql);
             $stmt->bindParam(':idPersona', $idPersona);
@@ -23,7 +23,7 @@ class ExpedienteDAO {
 
     public function actualizarTutorCarrera($idPersona,$idTutor,$idCarrera) {
         try {
-            $sql = "UPDATE Expediente Set idTutor = :idTutor, idCarrera = :idCarrera WHERE idPersona = :idPersona";
+            $sql = "UPDATE expediente Set idTutor = :idTutor, idCarrera = :idCarrera WHERE idPersona = :idPersona";
             $stmt = $this->pdo->prepare($sql);
             $stmt->bindParam(':idTutor', $idTutor);
             $stmt->bindParam(':idCarrera', $idCarrera);
@@ -37,7 +37,7 @@ class ExpedienteDAO {
 
     public function actualizarDatosEm($idPersona,$nss,$clinica,$direccion) {
         try {
-            $sql = "UPDATE Expediente Set nss = :nss, clinica = :clinica, direccion = :direccion WHERE idPersona = :idPersona";
+            $sql = "UPDATE expediente Set nss = :nss, clinica = :clinica, direccion = :direccion WHERE idPersona = :idPersona";
             $stmt = $this->pdo->prepare($sql);
             $stmt->bindParam(':nss', $nss);
             $stmt->bindParam(':clinica', $clinica);

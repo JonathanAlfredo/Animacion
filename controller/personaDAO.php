@@ -30,7 +30,7 @@ class PersonaDAO {
 
     public function actualizarPersona($idPersona, $nombre, $appat, $apmat, $telefono, $correo, $sexo) {
         try {
-            $sql = "UPDATE Persona 
+            $sql = "UPDATE persona 
                     SET nombre = :nombre, apPaterno = :appat, apMaterno = :apmat, telefono = :telefono, correo = :correo, sexo = :sexo
                     WHERE idPersona = :idPersona";
             $stmt = $this->pdo->prepare($sql);
@@ -50,7 +50,7 @@ class PersonaDAO {
 
     public function existe($idPersona) {
         try {
-            $sql = "SELECT * FROM Persona WHERE idPersona = :idPersona";
+            $sql = "SELECT * FROM persona WHERE idPersona = :idPersona";
             $stmt = $this->pdo->prepare($sql);
             $stmt->bindParam(':idPersona', $idPersona);
             $stmt->execute();

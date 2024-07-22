@@ -23,8 +23,8 @@ $pdo = Database::getInstance();
         
             $sql = "
                 SELECT e.nss, e.clinica, e.direccion
-                FROM Persona p
-                JOIN Expediente e ON p.idPersona = e.idPersona
+                FROM persona p
+                JOIN expediente e ON p.idPersona = e.idPersona
                 WHERE p.idPersona = :idPersona
             ";
         

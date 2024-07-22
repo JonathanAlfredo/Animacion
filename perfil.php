@@ -70,7 +70,7 @@ $pdo = Database::getInstance();
                 <input type="text" name="idPersona" inputmode="numeric" pattern="\d*" required readonly value="<?php echo $idPersona; ?>"/>
 
                 <label >Cambiar Foto:</label>
-                <input type="file" id="imagen" name="imagen" accept="image/*">
+                <input type="file" id="imagen" name="imagen" accept="image/*" src="<?php echo $datosPersona['imagen'];?>">
 
                 <label >Nombre(s):</label>
                 <input type="text" name="nombre" required value="<?php echo $datosPersona['nombre'];?>">

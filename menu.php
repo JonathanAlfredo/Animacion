@@ -25,7 +25,7 @@ verifySesion(false);
                 </div>
             </a>
 
-            <a href="">
+            <a href="emergencia.php">
                 <div class="inner-card" style="background-color: #fb7a68; color: #a30404;">
                     <img src="assets/imgs/salud.png" alt="" class="icon">
                     <p>Emergencias</p>

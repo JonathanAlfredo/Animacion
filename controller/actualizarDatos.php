@@ -19,6 +19,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $telefonoT = $_POST['telefonoT'];
     $idTutor = $_POST['idTutor'];
 
+
+    
+
     $rutaSubida = '';
     if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] === UPLOAD_ERR_OK) {
         $nombreArchivo = $_FILES['imagen']['name'];
@@ -51,10 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $usuarioDAO = new UsuarioDAO();
     $expedienteDAO = new ExpedienteDAO();
 
-    $exists=$personaDAO->existe($idTutor);
-    echo $idCarrera;
-
-    if ($exists) {
+    if ($personaDAO->existe($idTutor)) {
         $personaActualizada = $personaDAO->actualizarPersona($idPersona,$nombre,$apPaterno,$apMaterno,$telefono,$correo,$sexo);
         $usuarioActualizado = $usuarioDAO->actualizarImagen($idPersona,$rutaSubida); 
         $expedienteActualizado = $expedienteDAO->actualizarTutorCarrera($idPersona,$idTutor,$idCarrera);

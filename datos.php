@@ -97,7 +97,7 @@ $pdo = Database::getInstance();
                     <option value='' ". ($datosPersona['idCarrera'] == '' ? 'selected' : '') .">Seleccionar</option>
                     ";
                     try {
-                    $stmt = $pdo->query('SELECT * FROM Carrera');
+                    $stmt = $pdo->query('SELECT * FROM carrera');
                     $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     foreach ($result as $row) {
                         echo "<option value='" . $row['idCarrera'] . "' ". ($datosPersona['idCarrera'] == $row['idCarrera'] ? 'selected' : '') .">" . $row["nombre"] . "</option>";

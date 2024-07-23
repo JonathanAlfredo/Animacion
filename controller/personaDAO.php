@@ -10,7 +10,7 @@ class PersonaDAO {
 
     public function insertarPersona($idPersona,$nombre, $appat, $apmat, $telefono, $correo, $sexo, $idTipoPersona) {
         try {
-            $sql = "INSERT INTO Persona(idPersona,nombre, apPaterno, apMaterno, telefono, correo, sexo, idTipoPersona) 
+            $sql = "INSERT INTO persona(idPersona,nombre, apPaterno, apMaterno, telefono, correo, sexo, idTipoPersona) 
                     VALUES (:idPersona, :nombre, :appat, :apmat, :telefono, :correo, :sexo, :idTipoPersona)";
             $stmt = $this->pdo->prepare($sql);
             $stmt->bindParam(':idPersona', $idPersona);

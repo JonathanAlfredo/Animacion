@@ -62,5 +62,23 @@ class PersonaDAO {
         }
     }    
     
+    public function obtenerTipo($idPersona) {
+        try {
+            $sql = "SELECT t.tipo FROM persona p JOIN tipopersona t ON t.idTipoPersona = p.idTipoPersona WHERE idPersona = :idPersona";
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->bindParam(':idPersona', $idPersona);
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+            if ($result && isset($result['tipo'])) {
+                return $result['tipo'];
+            } else {
+                return null; 
+            }
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+            return false;
+        }
+    }
 }
 ?>

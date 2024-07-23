@@ -14,7 +14,7 @@ $pdo = Database::getInstance();
     <link rel="stylesheet" href="assets/css/base.css" />
     <link rel="stylesheet" href="assets/css/layout.css" />
     <link rel="stylesheet" href="assets/css/components.css" />
-    <title>Animacion</title>
+    <title>Registrar Usuario</title>
   </head>
   <body>
 

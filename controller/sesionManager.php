@@ -9,8 +9,8 @@ function sesionKiller(){
 }
 
 function verifySesion($flag){
+    session_start();
     if ($flag) {
-        session_start();
         if (isset($_SESSION['idPersona'])) {
             header("Location: menu.php");
             exit();

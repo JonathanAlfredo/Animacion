@@ -70,33 +70,34 @@ $idPersona = isset($_GET['person']) ? $_GET['person'] : 'Desconocido';
             <br><p >Direccion: <?php echo $datosPersona['direccion'];?></p>
             <br>
 
-            <form action="controller/reportarIncidente.php" class="form" id="reporte" >
-            <input type="hidden" name="idPersona" value="<?php echo $idPersona; ?>" >
-            <input type="hidden" name="idReportante" value="<?php echo $idReportante; ?>" >
-            <input type="hidden" name="ubicacion" id="location" >
+            <form action="controller/reportarIncidente.php" class="form" id="reporte" method="POST">
+            
+                <input type="hidden" name="idPersona" value="<?php echo $idPersona; ?>" >
+                <input type="hidden" name="idReportante" value="<?php echo $idReportante; ?>" >
+                <input type="hidden" name="ubicacion" id="location" >
 
-            <label>Comentarios:</label>
-            <textarea name="comentarios" rows="10" cols="50" ></textarea>
+                <label>Comentarios:</label>
+                <textarea name="comentarios" rows="10" cols="50" ></textarea>
 
-            <label >Tipo Incidente:</label>
-            <?php
-                echo "
-                <select name='idTipoIncidente' required>
-                <option value='' selected >Seleccionar</option>
-                ";
-                try {
-                $stmt = $pdo->query('SELECT * FROM tipoincidente');
-                $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                foreach ($result as $row) {
-                    echo "<option value='" . $row['idTipoIncidente'] . "'>" . $row["tipo"] . "</option>";
-                }
-                } catch (PDOException $e) {
-                echo 'Query failed: ' . $e->getMessage();
-                }
-                echo "</select>";
-            ?>
+                <label >Tipo Incidente:</label>
+                <?php
+                    echo "
+                    <select name='idTipoIncidente' required>
+                    <option value='' selected >Seleccionar</option>
+                    ";
+                    try {
+                    $stmt = $pdo->query('SELECT * FROM tipoincidente');
+                    $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    foreach ($result as $row) {
+                        echo "<option value='" . $row['idTipoIncidente'] . "'>" . $row["tipo"] . "</option>";
+                    }
+                    } catch (PDOException $e) {
+                    echo 'Query failed: ' . $e->getMessage();
+                    }
+                    echo "</select>";
+                ?>
 
-            <button type="submit" class="btn-primary">Reportar incidente</button> 
+                <button type="submit" class="btn-primary">Reportar incidente</button> 
 
 
             </form>

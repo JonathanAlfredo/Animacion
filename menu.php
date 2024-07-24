@@ -69,7 +69,7 @@ $tipo = $personaDAO->obtenerTipo($_SESSION['idPersona']);
                 </div>
             </a>
             <?php
-            if ($tipo === 'Maestro') {
+            if ($tipo === 'Maestro' || $rol === "Administrador" ) {
                 echo "
                     <a href=''>
                         <div class='inner-card' style='background-color: #f2e255; color: #8a902b;'>
@@ -85,7 +85,20 @@ $tipo = $personaDAO->obtenerTipo($_SESSION['idPersona']);
                     </a>
                 ";
             }
+
+            if ($rol === "Administrador" ) {
+                echo "
+                    <a href='admQr.php'>
+                        <div class='inner-card' style='background-color: #9afe81; color: #1c7f03;'>
+                            <img src='assets/imgs/Documentos.png' alt='' class='icon'>
+                            <p>Vizualizar QR</p>
+                        </div>
+                    </a>
+                ";
+            }
             ?>
+
+            
             
             <a href='index.php?exit=true'>Cerra Sesion</a>
 

@@ -17,4 +17,3 @@ function generateQRCode(id) {
     }
 }
 
-generateQRCode("2021451014");

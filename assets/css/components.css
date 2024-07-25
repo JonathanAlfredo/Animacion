@@ -56,3 +56,39 @@ margin: 0 auto 20px;
     border-radius: 50%;
     filter: drop-shadow(0 0 0.70rem #c8f8b1);
 }
+
+.container {
+    display: flex;
+    align-items: center;
+    width: 80%; 
+    max-width: 800px; 
+    margin-bottom: 20px;
+}
+
+.circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #3498db;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.category {
+    height: 80px;
+    font-size: 1em;
+    color: #FFFFFF ;
+    flex-grow: 1; 
+    text-align: left;
+    margin-right: 20px;
+    background-color: #3498db;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    font-size: 1.5em;
+    border-radius: 10px;
+}

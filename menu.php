@@ -56,7 +56,7 @@ $tipo = $personaDAO->obtenerTipo($_SESSION['idPersona']);
                     <p>Expediente</p>
                 </div>
             </a>
-            <a href=''>
+            <a href='estadistica.php'>
                 <div class='inner-card' style='background-color: #f2e255; color: #8a902b;'>
                     <img src='assets/imgs/Documentos.png' alt='' class='icon'>
                     <p>Reportes</p>

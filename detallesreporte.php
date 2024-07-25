@@ -77,8 +77,13 @@ $idReporte = isset($_GET['idReporte']) ? $_GET['idReporte'] : 'Desconocido';
             <br><p >Fecha del incidente: <?php echo $datosReporte['fechaHora'];?></p>
             <br><p >Detalles: <?php echo $datosReporte['comentarios'];?></p>
             <br><p >Incidente: <?php echo $datosReporte['tipo'];?></p>
-            <br><p>Ubicacion: <?php echo $datosReporte['ubicacion'];?></p>
-            <div id="map"></div>
+            <div class="inner-card">
+                <img src="assets/imgs/map.png" class="icon-sm"  >
+                <a href="https://www.google.com/maps/place/<?php echo $datosReporte['ubicacion'];?>" style="color:#cb2027;">Ubicacion</a>
+            </div>
+            
+
+
 
             <br><p >Persona que reportó: <?php echo $datosReporte['nombreReportante'];?></p>
 

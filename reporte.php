@@ -57,7 +57,11 @@ $idPersona = isset($_GET['person']) ? $_GET['person'] : 'Desconocido';
         <div class="card" style="text-align: left;">  
             
         
-            <a href="compañeros.php">Regresar</a>
+            <div class="navbar">
+                <a href="compañeros.php">Regresar</a>
+                <a href='index.php?exit=true' style="float: right;">Cerrar Sesion</a>
+            </div>           
+            
             <div class="title">
                 <h1>Realizar reporte</h1>
             </div>

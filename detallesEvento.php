@@ -67,7 +67,10 @@ $idEvento = isset($_GET['idEvento']) ? $_GET['idEvento'] : 'Desconocido';
         <div class="card" style="text-align: left;">  
             
         
-            <a href="evento.php">Regresar</a>
+            <div class="navbar">
+                <a href="evento.php">Regresar</a>
+                <a href='index.php?exit=true' style="float: right;">Cerrar Sesion</a>
+            </div>
             <div class="title">
                 <h1>Detalles de Evento</h1>
             </div>

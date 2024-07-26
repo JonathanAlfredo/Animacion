@@ -23,13 +23,17 @@ $tipo = $personaDAO->obtenerTipo($_SESSION['idPersona']);
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/layout.css">
     <link rel="stylesheet" href="assets/css/components.css">
+
 </head>
 <body>
+    
     <div class="container  centered">
+        
 
         <div class="card" >
-        <a href='index.php?exit=true'>Cerrar Sesion</a>
-
+            <div class="navbar">
+                <a href='index.php?exit=true' style="float: right;">Cerrar Sesion</a>
+            </div>
 
 
             <a href='perfil.php'>

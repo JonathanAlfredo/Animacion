@@ -44,7 +44,10 @@ $pdo = Database::getInstance();
     <div class="container full-height centered">
         <div class="card" style="text-align: left;">
             
-            <a href="menu.php">Regresar</a>
+            <div class="navbar">
+                <a href="menu.php">Regresar</a>
+                <a href='index.php?exit=true' style="float: right;">Cerrar Sesion</a>
+            </div>
 
             <div class="title">
                 <h1>Expediente</h1>

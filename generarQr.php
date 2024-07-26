@@ -23,8 +23,10 @@ $idPersona = isset($_GET['idPersona']) ? $_GET['idPersona'] : 'Desconocido';
 <body>
 <div class="container full-height centered">
         <div class="card" style="text-align: left;">    
-            <a href="admQr.php">Regresar</a>
-            <div>
+            <div class="navbar">
+                <a href="admQr.php">Regresar</a>
+                <a href='index.php?exit=true' style="float: right;">Cerrar Sesion</a>
+            </div>            <div>
                 <div id="qr-code"></div>
             </div>
             

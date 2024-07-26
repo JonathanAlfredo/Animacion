@@ -80,5 +80,24 @@ class PersonaDAO {
             return false;
         }
     }
+
+    public function obtenerNombre($idPersona) {
+        try {
+            $sql = "SELECT CONCAT(p.nombre,' ',p.apPaterno,' ',p.apMaterno) as nombre FROM persona p WHERE idPersona = :idPersona";
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->bindParam(':idPersona', $idPersona);
+            $stmt->execute();
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
+    
+            if ($result && isset($result['nombre'])) {
+                return $result['nombre'];
+            } else {
+                return null; 
+            }
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+            return false;
+        }
+    }
 }
 ?>

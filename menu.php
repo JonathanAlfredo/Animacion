@@ -28,6 +28,7 @@ $tipo = $personaDAO->obtenerTipo($_SESSION['idPersona']);
     <div class="container  centered">
 
         <div class="card" >
+        <a href='index.php?exit=true'>Cerrar Sesion</a>
 
 
 
@@ -71,7 +72,7 @@ $tipo = $personaDAO->obtenerTipo($_SESSION['idPersona']);
             <?php
             if ($tipo === 'Maestro' || $rol === "Administrador" ) {
                 echo "
-                    <a href=''>
+                    <a href='evento.php'>
                         <div class='inner-card' style='background-color: #f2e255; color: #8a902b;'>
                             <img src='assets/imgs/Documentos.png' alt='' class='icon'>
                             <p>Pase de Asistencia</p>
@@ -100,7 +101,6 @@ $tipo = $personaDAO->obtenerTipo($_SESSION['idPersona']);
 
             
             
-            <a href='index.php?exit=true'>Cerra Sesion</a>
 
 
 

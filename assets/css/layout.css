@@ -1,6 +1,6 @@
 /* Layout styles */
 .container {
-    width: 90%;
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
   }
@@ -12,22 +12,19 @@
     height: 100%;
   }
   
-  .full-height {
-    height: 100vh;
-  }
   
   .card {
-    background-color: #4b056cda;
+    background-color: #4745483e;
     padding: 20px;
-    border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 400px;
+    height: 100%;
+    max-width: 500px;
+    min-height: 100vh;
     box-sizing: border-box;
     color: aliceblue;
-
-
   }
+  
   .inner-card{
     align-items: center;
     display: flex;
@@ -35,7 +32,6 @@
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 400px;
     box-sizing: border-box;
     color: aliceblue;
     margin-bottom: 20px;

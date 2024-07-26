@@ -63,7 +63,7 @@ $pdo = Database::getInstance();
                     foreach ($datosReporte as $row) {
                         echo "
 
-                        <div class='container'>
+                        <div class='cont'>
                             <span class='category'>".$row['tipo']."</span>
                             <div class='circle'>".$row['numero']."</div>
                         </div>

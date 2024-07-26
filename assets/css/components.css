@@ -57,10 +57,10 @@ margin: 0 auto 20px;
     filter: drop-shadow(0 0 0.70rem #c8f8b1);
 }
 
-.container {
+.cont {
     display: flex;
     align-items: center;
-    width: 80%; 
+    width: 100%; 
     max-width: 800px; 
     margin-bottom: 20px;
 }

@@ -43,7 +43,7 @@ $pdo = Database::getInstance();
 
     
 
-    <div class="container full-height centered">
+    <div class="container  centered">
         <div class="card" >
             
             <a href="menu.php">Regresar</a>

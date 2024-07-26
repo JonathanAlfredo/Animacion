@@ -37,7 +37,7 @@ $idPersona = $_SESSION['idPersona'];
     </style>
 </head>
 <body>
-    <div class="container full-height centered">
+    <div class="container centered">
         <div class="card">
             <a href="menu.php">Regresar</a>
             <div class="title">

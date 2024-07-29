@@ -92,3 +92,22 @@ margin: 0 auto 20px;
     font-size: 1.5em;
     border-radius: 10px;
 }
+
+.report-card {
+    padding: 15px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.report-details {
+    flex-grow: 1;
+}
+.report-card p {
+    margin: 5px 0;
+}
+.report-card button {
+    margin-left: 20px;
+}

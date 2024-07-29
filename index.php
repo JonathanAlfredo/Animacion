@@ -21,7 +21,7 @@ if ($exit=='true') {
     <link rel="stylesheet" href="assets/css/components.css">
 </head>
 <body>
-    <div class="container full-height centered">
+    <div class="container  centered">
         <div class="card">
             <img src="assets/imgs/image.png" alt="logo">
             <form action="controller/autenticarUsuario.php" method="POST" class="form">
@@ -29,7 +29,7 @@ if ($exit=='true') {
                 <input type="password" name="pass" placeholder="Contraseña" required>
                 <button type="submit" class="btn-primary">Iniciar Sesión</button>
                 <a href="registro.php" class="link">Crear Cuenta</a>
-                <a href="" class="link" style="color: crimson;">Olvide mi contraseña</a>
+                <!--  <a href="" class="link" style="color: crimson;">Olvide mi contraseña</a> -->
             </form>
         </div>
     </div>

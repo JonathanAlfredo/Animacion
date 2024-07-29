@@ -61,36 +61,32 @@ $pdo = Database::getInstance();
                 </div>
             </a>
 
+
             <?php
                 if (!empty($datosEvento)) {
                     foreach ($datosEvento as $row) {
                         echo "
-
-
-                        <div class='inner-card'>
-                            <table>
-                                <tbody>
-                                    <td>
-                                        <p>".$row['fecha']."</p>
-                                    </td>
-                                    <td>
-                                        <p>".$row['descripcion']."</p>
-                                    </td>
-                                    <td> 
-                                        <form action='detallesEvento.php' class='form'>
-                                            <input type='hidden' name='idEvento' value='".$row['idEvento']."'>
-                                            <button type='submit' class='btn-primary'>Detalles</button>
-                                        </form>
-                                    </td>
-                                </tbody>
-                            </table>
+                        <div class='report-card'>
+                            <div class='report-details'>
+                                <p><strong>Fecha:</strong> ".$row['fecha']."</p>
+                                <p><strong>Descripción:</strong> ".substr($row['descripcion'], 0, 50)."...</p>
+                            </div>
+                            <form action='detallesevento.php' class='form' >
+                                <input type='hidden' name='idEvento' value='".$row['idEvento']."'>
+                                <button type='submit' class='btn-primary'>Detalles</button>
+                            </form>
                         </div>
-                        
-                        
                         ";
                     }
+                } else {
+                    echo "
+                    <div class='report-card'>
+                        <p>No hay reportes nuevos por el momento</p>
+                    </div>
+                    ";
                 }
             ?>
+
 
             
 

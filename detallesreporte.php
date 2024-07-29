@@ -81,10 +81,13 @@ $idReporte = isset($_GET['idReporte']) ? $_GET['idReporte'] : 'Desconocido';
             <br><p >Detalles: <?php echo $datosReporte['comentarios'];?></p>
             <br><p >Incidente: <?php echo $datosReporte['tipo'];?></p>
 
-            <div class="inner-card"  style="background-color: #cfd8dc;">
-                <img src="assets/imgs/map.png" class="icon-sm"  >
-                <a href="https://www.google.com/maps/place/<?php echo $datosReporte['ubicacion'];?>" style="color:#cb2027;">Ubicacion</a>
-            </div>
+
+            <a href="https://www.google.com/maps/place/<?php echo $datosReporte['ubicacion'];?>">
+                <div class="inner-card"  style="background-color: #cfd8dc;">
+                    <img src="assets/imgs/map.png" class="icon-sm"  >
+                    <p href="https://www.google.com/maps/place/<?php echo $datosReporte['ubicacion'];?>" style="color:#cb2027;">Ubicacion</p>
+                </div>
+            </a>
             
 
 

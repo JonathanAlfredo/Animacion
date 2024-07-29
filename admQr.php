@@ -29,7 +29,7 @@ $pdo = Database::getInstance();
             ";
             $stmt = $pdo->prepare($sql);
             $stmt->execute();
-            $datosReporte = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $datosPersona = $stmt->fetchAll(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
             echo 'Query failed: ' . $e->getMessage();
         }
@@ -47,43 +47,31 @@ $pdo = Database::getInstance();
                 <h1>Codigos QR</h1>
             </div>
 
-            
             <?php
-                if (!empty($datosReporte)) {
-                    foreach ($datosReporte as $row) {
+                if (!empty($datosPersona)) {
+                    foreach ($datosPersona as $row) {
                         echo "
-
-
-                        <div class='inner-card'>
-                            <table>
-                                <tbody>
-                                    <td>
-                                        <p>".$row['idPersona']."</p>
-                                    </td>
-                                    <td>
-                                        <p>".$row['nombre']."</p>
-                                    </td>
-                                    <td> 
-                                        <form action='generarQr.php' class='form'>
-                                            <input type='hidden' name='idPersona' value='".$row['idPersona']."'>
-                                            <button type='submit' class='btn-primary'>QR</button>
-                                        </form>
-                                    </td>
-                                </tbody>
-                            </table>
+                        <div class='report-card'>
+                            <div class='report-details'>
+                                <p><strong>Matricula:</strong> ".$row['idPersona']."</p>
+                                <p><strong>Alumno:</strong> ".$row['nombre']."</p>
+                            </div>
+                            <form action='generarQr.php' class='form' >
+                                <input type='hidden' name='idPersona' value='".$row['idPersona']."'>
+                                <button type='submit' class='btn-primary'>Codigo QR</button>
+                            </form>
                         </div>
-                        
-                        
                         ";
                     }
                 } else {
                     echo "
-                    <div class='inner-card'>
-                                <p>No hay reportes nuevos por el momento</p>
+                    <div class='report-card'>
+                        <p>No hay reportes nuevos por el momento</p>
                     </div>
                     ";
                 }
             ?>
+            
                 
         </div>
     </div>

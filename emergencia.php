@@ -66,14 +66,14 @@ $pdo = Database::getInstance();
                 <label >Direccion:</label>
                 <input type="text" name="direccion" required value="<?php echo $datosEmergencia['direccion'];?>">
 
-                <p >Numero Ambulancia:<p><br>
+                <!-- <p >Numero Ambulancia:<p><br>
 
-                <p >Numero de seguridad(policia):</p><br>
+                <p >Numero de seguridad(policia):</p><br> --> 
 
                 <button type="submit" class="btn-primary">Actualizar Datos</button>
 
                 <a href="juridico.html" class="link"> Indicaciones a juridico </a>
-                <a href="" class="link" style="color:rgb(181, 10, 44);">Llamadas de emergencia </a>
+                <a href="" class="link" style="color:#cd3131;">Llamadas de emergencia </a>
 
 
 

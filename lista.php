@@ -15,14 +15,18 @@ $pdo = Database::getInstance();
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/layout.css">
     <link rel="stylesheet" href="assets/css/components.css">
+
+
 </head>
 <body>
     <?php
         try {
             $sql = "
-                SELECT r.idReporte, t.tipo
+                SELECT CONCAT(p.nombre,' ',p.apPaterno,' ',p.apMaterno) as nombre,
+                r.idReporte, t.tipo, r.fechaHora, r.comentarios
                 FROM reporte r
                 JOIN tipoincidente t ON t.idTipoIncidente = r.idTipoIncidente
+                JOIN persona p ON p.idPersona = r.idPersona
                 WHERE r.estado = 'Nuevo'
             ";
             $stmt = $pdo->prepare($sql);
@@ -50,31 +54,24 @@ $pdo = Database::getInstance();
                 if (!empty($datosReporte)) {
                     foreach ($datosReporte as $row) {
                         echo "
-
-
-                        <div class='inner-card'>
-                            <table>
-                                <tbody>
-                                    <td>
-                                        <p>".$row['tipo']."</p>
-                                    </td>
-                                    <td> 
-                                        <form action='detallesreporte.php' class='form'>
-                                            <input type='hidden' name='idReporte' value='".$row['idReporte']."'>
-                                            <button type='submit' class='btn-primary'>Detalles</button>
-                                        </form>
-                                    </td>
-                                </tbody>
-                            </table>
+                        <div class='report-card'>
+                            <div class='report-details'>
+                                <p><strong>Tipo:</strong> ".$row['tipo']."</p>
+                                <p><strong>Fecha:</strong> ".$row['fechaHora']."</p>
+                                <p><strong>Alumno:</strong> ".$row['nombre']."</p>
+                                <p><strong>Descripción:</strong> ".substr($row['comentarios'], 0, 50)."...</p>
+                            </div>
+                            <form action='detallesreporte.php' class='form' >
+                                <input type='hidden' name='idReporte' value='".$row['idReporte']."'>
+                                <button type='submit' class='btn-primary'>Detalles</button>
+                            </form>
                         </div>
-                        
-                        
                         ";
                     }
                 } else {
                     echo "
-                    <div class='inner-card'>
-                                <p>No hay reportes nuevos por el momento</p>
+                    <div class='report-card'>
+                        <p>No hay reportes nuevos por el momento</p>
                     </div>
                     ";
                 }

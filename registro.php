@@ -34,18 +34,9 @@ $pdo = Database::getInstance();
             <input type="password" name="pass1" placeholder="Confirmar Contraseña" required />
 
             <select name="idTipoPersona"  required>
-              <?php
-                try {
-                  $stmt = $pdo->query('SELECT * FROM tipopersona');
-                  $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-                  foreach ($result as $row) {
-                    echo "<option value='" . $row["idTipoPersona"] . "'>" . $row["tipo"] . "</option>";
-                  }
-                } catch (PDOException $e) {
-                  echo 'Query failed: ' . $e->getMessage();
-                }
-              ?>
-          </select>
+              <option value='1'> Alumno </option>
+              <option value='2'> Maestro </option>
+            </select>
 
             <button type="submit" class="btn-primary">Crear Cuenta</button>
             <a href="index.php" class="link">Iniciar Sesión</a>

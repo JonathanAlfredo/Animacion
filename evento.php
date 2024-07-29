@@ -81,7 +81,7 @@ $pdo = Database::getInstance();
                 } else {
                     echo "
                     <div class='report-card'>
-                        <p>No hay reportes nuevos por el momento</p>
+                        <p>No se encontraron eventos</p>
                     </div>
                     ";
                 }

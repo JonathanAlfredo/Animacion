@@ -6,6 +6,9 @@ verifySesion(false);
 $pdo = Database::getInstance();
 
 $idEvento = isset($_GET['idEvento']) ? $_GET['idEvento'] : 'Desconocido';
+$idPersona = $_SESSION['idPersona'];
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,6 +19,8 @@ $idEvento = isset($_GET['idEvento']) ? $_GET['idEvento'] : 'Desconocido';
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/layout.css">
     <link rel="stylesheet" href="assets/css/components.css">
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    
 </head>
 <body>
     <?php
@@ -44,10 +49,11 @@ $idEvento = isset($_GET['idEvento']) ? $_GET['idEvento'] : 'Desconocido';
         
             $sql = " 
             SELECT CONCAT(p.nombre,' ',p.apPaterno,' ',p.apMaterno) as nombre,
-            a.entrada, a.salida
+            p.idPersona
             FROM asistencia a
             JOIN persona p ON p.idPersona = a.idPersona
             WHERE a.idEvento = :idEvento
+            AND a.salida IS NULL
             ";
         
             $stmt = $pdo->prepare($sql);
@@ -61,6 +67,8 @@ $idEvento = isset($_GET['idEvento']) ? $_GET['idEvento'] : 'Desconocido';
             echo 'Query failed: ' . $e->getMessage();
         }
 
+
+        
     ?>
 
     <div class="container centered">
@@ -71,35 +79,47 @@ $idEvento = isset($_GET['idEvento']) ? $_GET['idEvento'] : 'Desconocido';
                 <a href="evento.php">Regresar</a>
                 <a href='index.php?exit=true' style="float: right;">Cerrar Sesion</a>
             </div>
+
             <div class="title">
-                <h1>Detalles de Evento</h1>
+                <h1>Registrar salidas</h1>
             </div>
 
             <br><p ><?php echo $datosEvento['descripcion'];?></p>
 
-            <br><p >Encargado:  <?php echo $datosEvento['nombre'];?></p>
-            <br><p >Fecha: <?php echo $datosEvento['fecha'];?></p>
-            <br><h2>Asistentes</h2>
-           
-            
-                <?php
-                if ($datosAsistentes) {
-                    foreach($datosAsistentes as $asistente);
+        
 
-                    echo "
+            <?php
+                if (!empty($datosAsistentes)) {
+                    foreach ($datosAsistentes as $row) {
+                        echo "
                         <div class='report-card'>
                             <div class='report-details'>
-                                <p><strong>Asistente:</strong> ".$asistente['nombre']."</p>
-                                <p><strong>Hora de entrada:</strong> ".$asistente['entrada']."</p>
-                                <p><strong>Hora de salida:</strong> ".$asistente['salida']."</p>
-                            </div>    
+                                <p>".$row['nombre']."</p>
+                            </div>
+
+                            <form action='controller/registrarSalidas.php' class='form' method='POST'>
+                                <input type='hidden' name='idEvento' value='".$idEvento."'>
+                                <input type='hidden' name='idPersona' value='".$row['idPersona']."'>
+
+                                <button type='submit' class='btn-primary'>Marcar salida</button>
+                            </form>
                         </div>
                         ";
+                    }
+                } else {
+                    echo "
+                    <div class='report-card'>
+                        <p>No se requiere registrar ninguna salida</p>
+                    </div>
+                    ";
                 }
-                    
-                ?>
+            ?>
+            
+                
         </div>
     </div>
+
+    
 
 </body>
 </html>

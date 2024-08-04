@@ -111,3 +111,17 @@ margin: 0 auto 20px;
 .report-card button {
     margin-left: 20px;
 }
+
+#asistentesList {
+    margin-top: 20px;
+}
+#asistentesList li {
+    list-style-type: none;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}
+.error {
+    color: red;
+    font-weight: bold;
+}
+    

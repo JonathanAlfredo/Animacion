@@ -30,6 +30,7 @@ $pdo = Database::getInstance();
                 SELECT e.idEvento, e.fecha, e.descripcion
                 FROM evento e
                 WHERE e.idEncargado = :idEncargado
+                ORDER BY e.fecha DESC
             ";
             $stmt = $pdo->prepare($sql);
             $stmt->bindParam(':idEncargado', $idEncargado);
@@ -71,10 +72,26 @@ $pdo = Database::getInstance();
                                 <p><strong>Fecha:</strong> ".$row['fecha']."</p>
                                 <p><strong>Descripción:</strong> ".substr($row['descripcion'], 0, 50)."...</p>
                             </div>
-                            <form action='detallesevento.php' class='form' >
-                                <input type='hidden' name='idEvento' value='".$row['idEvento']."'>
-                                <button type='submit' class='btn-primary'>Detalles</button>
-                            </form>
+
+                            <a href='detallesevento.php?idEvento=".$row['idEvento']."'  style='padding: 5px;' >
+                                <div class='inner-card'style='background-color: #007bff; padding: 10px;'>
+                                    <p class='link'> Detalles </p>
+                                </div>
+                            </a>
+
+                            <a href='entradasevento.php?idEvento=".$row['idEvento']."'  style='padding: 5px;' >
+                                <div class='inner-card'style='background-color: #109f5b; padding: 10px;'>
+                                    <p class='link'> Entradas </p>
+                                </div>
+                            </a>
+
+                            <a href='salidasevento.php?idEvento=".$row['idEvento']."'  style='padding: 5px;' >
+                                <div class='inner-card'style='background-color: #dd4d3e; padding: 10px;'>
+                                    <p class='link'> Salidas </p>
+                                </div>
+                            </a>
+                            
+
                         </div>
                         ";
                     }

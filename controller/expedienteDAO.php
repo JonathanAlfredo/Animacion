@@ -66,6 +66,18 @@ class ExpedienteDAO {
         }
     }
     
+    public function actualizarConstancia($idPersona,$vigenciaDerechos) {
+        try {
+            $sql = "UPDATE expediente Set vigenciaDerechos = :vigenciaDerechos WHERE idPersona = :idPersona";
+            $stmt = $this->pdo->prepare($sql);
+            $stmt->bindParam(':vigenciaDerechos', $vigenciaDerechos);
+            $stmt->bindParam(':idPersona', $idPersona);
+            return $stmt->execute();
+        } catch (PDOException $e) {
+            echo "Error: " . $e->getMessage();
+            return false;
+        }
+    }
 
 
     

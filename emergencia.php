@@ -22,8 +22,8 @@ $pdo = Database::getInstance();
             $idPersona = $_SESSION['idPersona'];
         
             $sql = "
-                SELECT e.nss, e.clinica, e.direccion
-                FROM persona p
+                SELECT e.nss, e.clinica, e.direccion, e.vigenciaDerechos
+                FROM persona p 
                 JOIN expediente e ON p.idPersona = e.idPersona
                 WHERE p.idPersona = :idPersona
             ";
@@ -70,16 +70,22 @@ $pdo = Database::getInstance();
 
                 <p >Numero de seguridad(policia):</p><br> --> 
 
+                <div class="inner-card">
+                    <img src="assets/imgs/pdf.png"class="icon-sm"  >
+                    <a href="<?php echo $datosEmergencia['vigenciaDerechos'];?>" >Vigencia de derechos</a>
+                </div>
+
                 <button type="submit" class="btn-primary">Actualizar Datos</button>
 
                 <a href="juridico.html" class="link"> Indicaciones a juridico </a>
-                <a href="" class="link" style="color:#cd3131;">Llamadas de emergencia </a>
+                <a href="documentacion.php" class="link"> Documentacion </a>
 
 
 
                     
             </form>
-        </div>
+
+           
     </div>
 </body>
 </html>

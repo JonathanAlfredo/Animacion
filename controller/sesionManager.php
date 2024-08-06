@@ -9,14 +9,18 @@ function sesionKiller(){
 }
 
 function verifySesion($flag){
-    session_start();
+    if(session_status() == PHP_SESSION_NONE){
+        session_start();
+}    
     if ($flag) {
         if (isset($_SESSION['idPersona'])) {
             header("Location: menu.php");
             exit();
         }
     }else{
-        session_start();
+        if(session_status() == PHP_SESSION_NONE){
+            session_start();
+    }    
         if (!isset($_SESSION['idPersona'])) {
             header("Location: index.php");
             exit();

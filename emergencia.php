@@ -58,13 +58,13 @@ $pdo = Database::getInstance();
 
 
                 <label >Numero de Seguro social:</label>
-                <input type="text" name="nss" required value="<?php echo $datosEmergencia['nss'];?>">
+                <input type="text" name="nss" required value="<?php echo $datosEmergencia['nss'];?>" maxlength="11">
 
                 <label >Clinica:</label>
-                <input type="text" name="clinica" required value="<?php echo $datosEmergencia['clinica'];?>">
+                <input type="text" name="clinica" required value="<?php echo $datosEmergencia['clinica'];?>" maxlength="50">
 
                 <label >Direccion:</label>
-                <input type="text" name="direccion" required value="<?php echo $datosEmergencia['direccion'];?>">
+                <input type="text" name="direccion" required value="<?php echo $datosEmergencia['direccion'];?>" maxlength="100">
 
                 <!-- <p >Numero Ambulancia:<p><br>
 

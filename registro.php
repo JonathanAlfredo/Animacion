@@ -25,13 +25,13 @@ $pdo = Database::getInstance();
         <form action="controller/registrarUsuario.php" method="POST" class="form">
           <h2>Crea tu cuenta</h2>
 
-            <input type="text" name="idPersona" inputmode="numeric" pattern="\d*" placeholder="Matricula" required  />
+            <input type="text" name="idPersona" inputmode="numeric" pattern="\d*" placeholder="Matricula" required  maxlength="11"/>
 
-            <input type="email" name="correo" placeholder="Correo" required />
+            <input type="email" name="correo" placeholder="Correo" required maxlength="50"/>
 
-            <input type="password" name="pass" placeholder="Contraseña" required />
+            <input type="password" name="pass" placeholder="Contraseña" required maxlength="100"/>
 
-            <input type="password" name="pass1" placeholder="Confirmar Contraseña" required />
+            <input type="password" name="pass1" placeholder="Confirmar Contraseña" required maxlength="100"/>
 
             <select name="idTipoPersona"  required>
               <option value='1'> Alumno </option>

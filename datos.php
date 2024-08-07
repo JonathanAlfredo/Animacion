@@ -76,13 +76,13 @@ $pdo = Database::getInstance();
                 <input type="text" name="idPersona" inputmode="numeric" pattern="\d*" required readonly value="<?php echo $idPersona; ?>"/>
 
                 <label >Nombre(s):</label>
-                <input type="text" name="nombre" required value="<?php echo $datosPersona['nombre'];?>">
+                <input type="text" name="nombre" required value="<?php echo $datosPersona['nombre'];?>"  maxlength="50" >
 
                 <label >Apellido Paterno:</label>
-                <input type="text" name="apPaterno" required value="<?php echo $datosPersona['apPaterno'];?>">
+                <input type="text" name="apPaterno" required value="<?php echo $datosPersona['apPaterno'];?>" maxlength="50">
 
                 <label >Apellido Materno:</label>
-                <input type="text" name="apMaterno" required value="<?php echo $datosPersona['apMaterno'];?>">
+                <input type="text" name="apMaterno" required value="<?php echo $datosPersona['apMaterno'];?>" maxlength="50">
 
                 <label >Sexo:</label>
                 
@@ -116,24 +116,24 @@ $pdo = Database::getInstance();
                 
 
                 <label >Numero Celular:</label required>
-                <input type="text" name="telefono" inputmode="numeric" pattern="\d*" value="<?php echo $datosPersona['telefono'];?>">
+                <input type="text" name="telefono" inputmode="numeric" pattern="\d*" value="<?php echo $datosPersona['telefono'];?>" maxlength="10">
 
                 <label >Correo:</label>
-                <input type="email" name="correo" required value="<?php echo $datosPersona['correo'];?>">
+                <input type="email" name="correo" required value="<?php echo $datosPersona['correo'];?>" maxlength="50">
 
-                <input type="hidden" name="idTutor" required value="<?php echo $datosTutor['idTutor'];?>">
+                <input type="hidden" name="idTutor" required value="<?php echo $datosTutor['idTutor'];?>"> 
 
                 <label >Nombre(s) del Tutor:</label>
-                <input type="text" name="nombreT" required value="<?php echo $datosTutor['nombreT'];?>">
+                <input type="text" name="nombreT" required value="<?php echo $datosTutor['nombreT'];?>" maxlength="50">
 
                 <label >Apellido Paterno del Tutor:</label>
-                <input type="text" name="apPaternoT" required value="<?php echo $datosTutor['apPaternoT'];?>">
+                <input type="text" name="apPaternoT" required value="<?php echo $datosTutor['apPaternoT'];?>" maxlength="50">
 
                 <label >Apellido Materno del Tutor:</label>
-                <input type="text" name="apMaternoT" required value="<?php echo $datosTutor['apMaternoT'];?>">
+                <input type="text" name="apMaternoT" required value="<?php echo $datosTutor['apMaternoT'];?>" maxlength="50">
 
                 <label >Numero Celular del Tutor:</label>
-                <input type="text" name="telefonoT" inputmode="numeric" pattern="\d*" required value="<?php echo $datosTutor['telefonoT'];?>">
+                <input type="text" name="telefonoT" inputmode="numeric" pattern="\d*" required value="<?php echo $datosTutor['telefonoT'];?>" maxlength="10">
 
 
                 <button type="submit" class="btn-primary">Actualizar Datos</button>

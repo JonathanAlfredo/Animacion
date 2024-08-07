@@ -25,8 +25,8 @@ if ($exit=='true') {
         <div class="card">
             <img src="assets/imgs/image.png" alt="logo">
             <form action="controller/autenticarUsuario.php" method="POST" class="form">
-                <input type="text" name="idPersona" inputmode="numeric" pattern="\d*" placeholder="Matricula" required  />
-                <input type="password" name="pass" placeholder="Contraseña" required>
+                <input type="text" name="idPersona" inputmode="numeric" pattern="\d*" placeholder="Matricula" required maxlength="11" />
+                <input type="password" name="pass" placeholder="Contraseña" required maxlength="100">
                 <button type="submit" class="btn-primary">Iniciar Sesión</button>
                 <a href="registro.php" class="link">Crear Cuenta</a>
                 <!--  <a href="" class="link" style="color: crimson;">Olvide mi contraseña</a> -->

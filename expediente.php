@@ -78,10 +78,10 @@ $pdo = Database::getInstance();
                 ?>
 
                 <label >Tipo de Sangre:</label>
-                <input type="text" name="tipoSangre" required value="<?php echo $datosExpediente['tipoSangre'];?>">
+                <input type="text" name="tipoSangre" required value="<?php echo $datosExpediente['tipoSangre'];?>" maxlength="10">
 
                 <label >¿Padece alguna condicion medica? (especifique)</label>
-                <textarea name="condMedicas" rows="10" cols="50" required ><?php echo $datosExpediente['condMedicas'];?></textarea><br>
+                <textarea name="condMedicas" rows="10" cols="50" required maxlength="240" ><?php echo $datosExpediente['condMedicas'];?></textarea><br>
 
 
                 <button type="submit" class="btn-primary">Actualizar Datos</button>

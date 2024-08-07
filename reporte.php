@@ -81,7 +81,7 @@ $idPersona = isset($_GET['person']) ? $_GET['person'] : 'Desconocido';
                 <input type="hidden" name="ubicacion" id="location" >
 
                 <label>Comentarios:</label>
-                <textarea name="comentarios" rows="10" cols="50" ></textarea>
+                <textarea name="comentarios" rows="10" cols="50" maxlength="240"></textarea>
 
                 <label >Tipo Incidente:</label>
                 <?php

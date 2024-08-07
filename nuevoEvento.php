@@ -34,7 +34,7 @@ $idPersona = $_SESSION['idPersona'];
                 <label>Fecha:</label>
                 <input type="date" name="fecha" required>
                 <label>Descripcion:</label>
-                <textarea name="descripcion" rows="10" cols="50" required></textarea>
+                <textarea name="descripcion" rows="10" cols="50" required maxlength="99"></textarea>
                 <br>
                 <button type='submit' class='btn-primary'>Registrar Evento</button>
             </form>

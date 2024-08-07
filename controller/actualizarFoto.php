@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $usuarioActualizado = $usuarioDAO->actualizarImagen($idPersona,$rutaSubida); 
 
     if ($usuarioActualizado) {
-        header('Location: ../perfil.php?success=true');
+        header('Location: ../perfil.php?error=false');
     } else {
         echo $expedienteActualizado;
         header('Location: ../perfil.php?error=02'); //Error interno

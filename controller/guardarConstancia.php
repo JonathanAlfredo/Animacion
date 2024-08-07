@@ -36,10 +36,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $expedienteActualizado = $expedienteDAO->actualizarConstancia($idPersona,$rutaSubida);
 
     if ($expedienteActualizado) {
-        header('Location: ../emergencia.php?success=true');
+        header('Location: ../emergencia.php?error=false');
     } else {
         echo $expedienteActualizado;
-        //header('Location: ../emergencia.php?error=02'); //Error interno
+        header('Location: ../emergencia.php?error=02'); //Error interno
     }
 
     

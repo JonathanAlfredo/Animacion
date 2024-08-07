@@ -5,6 +5,8 @@ require_once 'controller/Database.php';
 verifySesion(false);
 $pdo = Database::getInstance();
 
+$error = isset($_GET['error']) ? $_GET['error'] : 'Desconocido';
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -17,8 +19,17 @@ $pdo = Database::getInstance();
     <link rel="stylesheet" href="assets/css/components.css">
     <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
     <script src="https://unpkg.com/html5-qrcode"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 <body>
+    <script>
+
+    var error = <?php echo json_encode($error); ?>;
+
+    </script>
+
+    <script src="assets/js/messages.js"></script>
     <div class="container full-height centered">
         <div class="card" style="text-align: left;">  
             

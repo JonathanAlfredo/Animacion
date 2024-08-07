@@ -18,14 +18,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($eventoInsertado) {
         
-        header('Location: ../evento.php?success=true');
+        header('Location: ../evento.php?error=false');
         exit;
 
        
 
     } else {
         echo $eventoInsertada;
-        header('Location: ../evento.php?error=03');
+        header('Location: ../evento.php?error=02');
     }
 
 } else {

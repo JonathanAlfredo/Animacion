@@ -14,10 +14,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $reporteInsertado = $reporteDAO->insertarReporte($idPersona,$idReportante,$comentarios,$ubicacion,$idTipoIncidente);
 
     if ($reporteInsertado) {
-        header('Location: ../compañeros.php?success=true');
+        header('Location: ../compañeros.php?error=false');
     } else {
         echo $reporteInsertado;
-        header('Location: ../compañeros.php?error=02'); //Error interno, problema al insertar usuario
+        header('Location: ../compañeros.php?error=02'); //Error interno
     }
 
 

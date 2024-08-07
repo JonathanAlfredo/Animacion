@@ -5,6 +5,9 @@ require_once 'controller/Database.php';
 verifySesion(false);
 $pdo = Database::getInstance();
 
+$error = isset($_GET['error']) ? $_GET['error'] : 'Desconocido';
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,8 +18,17 @@ $pdo = Database::getInstance();
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/layout.css">
     <link rel="stylesheet" href="assets/css/components.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 <body>
+    <script>
+
+    var error = <?php echo json_encode($error); ?>;
+
+    </script>
+
+    <script src="assets/js/messages.js"></script>
     <?php
         try {
             $idPersona = $_SESSION['idPersona'];

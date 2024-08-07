@@ -65,8 +65,9 @@ $idPersona = isset($_GET['person']) ? $_GET['person'] : 'Desconocido';
             <div class="title">
                 <h1>Realizar reporte</h1>
             </div>
-            <img src="<?php echo ($datosPersona['imagen'] == '' ? 'assets/imgs/usuariofoto.png' : $datosPersona['imagen'] );?>" alt="Foto de Perfil" class="profile-foto">
-
+            <div class="profile-foto-container">
+                <img src="<?php echo ($datosPersona['imagen'] == '' ? 'assets/imgs/usuariofoto.png' : $datosPersona['imagen'] );?>" alt="Foto de Perfil" class="profile-foto">
+            </div>
 
             <br><p >Nombre: <?php echo $datosPersona['nombre'];?></p>
             <br><p >Numero de Seguro Social: <?php echo $datosPersona['nss'];?> </p>

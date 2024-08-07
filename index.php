@@ -2,12 +2,16 @@
 include 'controller/sesionManager.php';
 
 $exit = isset($_GET['exit']) ? $_GET['exit'] : 'Desconocido';
+$error = isset($_GET['error']) ? $_GET['error'] : 'Desconocido';
+
 
 if ($exit=='true') {
     sesionKiller();
 }else{
     verifySesion(true);
 }
+
+
 
 ?>
 <!DOCTYPE html>
@@ -19,8 +23,18 @@ if ($exit=='true') {
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/layout.css">
     <link rel="stylesheet" href="assets/css/components.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </head>
 <body>
+    <script>
+
+        var error = <?php echo json_encode($error); ?>;
+
+    </script>
+
+    <script src="assets/js/messages.js"></script>
+
     <div class="container  centered">
         <div class="card">
             <img src="assets/imgs/image.png" alt="logo">

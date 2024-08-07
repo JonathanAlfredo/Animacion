@@ -71,8 +71,9 @@ $idReporte = isset($_GET['idReporte']) ? $_GET['idReporte'] : 'Desconocido';
                 <h1>Detalles de Reporte</h1>
             </div>
 
-            <img src="<?php echo ($datosReporte['imagen'] == '' ? 'assets/imgs/usuariofoto.png' : $datosReporte['imagen'] );?>" alt="Foto de Perfil" class="profile-foto">
-
+            <div class="profile-foto-container">
+                <img src="<?php echo ($datosReporte['imagen'] == '' ? 'assets/imgs/usuariofoto.png' : $datosReporte['imagen'] );?>" alt="Foto de Perfil" class="profile-foto">
+            </div>
 
             <br><p >Nombre: <?php echo $datosReporte['nombre'];?></p>
             <br><p >Tutor: <?php echo $datosReporte['nombreTutor'];?></p>

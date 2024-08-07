@@ -14,7 +14,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $tamanioArchivo = $_FILES['imagen']['size'];
         $tempArchivo = $_FILES['imagen']['tmp_name'];
         
-        $rutaSubida = 'assets/imgs/profilePictures/' . basename($nombreArchivo);
+        $rutaSubida = 'assets/imgs/profilePictures/' . $idPersona.basename($nombreArchivo);
 
         if (!file_exists('../assets/imgs/profilePictures')) {
             mkdir('../assets/imgs/profilePictures', 0777, true);

@@ -1,5 +1,6 @@
 <?php
 require_once 'controller/Database.php';
+$error = isset($_GET['error']) ? $_GET['error'] : 'Desconocido';
 
 $pdo = Database::getInstance();
 
@@ -14,11 +15,19 @@ $pdo = Database::getInstance();
     <link rel="stylesheet" href="assets/css/base.css" />
     <link rel="stylesheet" href="assets/css/layout.css" />
     <link rel="stylesheet" href="assets/css/components.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
     <title>Registrar Usuario</title>
   </head>
   <body>
 
+    <script>
 
+    var error = <?php echo json_encode($error); ?>;
+
+    </script>
+
+    <script src="assets/js/messages.js"></script>
 
     <div class="container full-height centered">
       <div class="card">

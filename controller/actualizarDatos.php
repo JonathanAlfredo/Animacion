@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $expedienteActualizado = $expedienteDAO->actualizarTutorCarrera($idPersona,$idTutor,$idCarrera);
 
         if ($personaActualizada && $expedienteActualizado) {
-            header('Location: ../datos.php?success=true');
+            header('Location: ../datos.php?error=false');
         } else {
             echo $expedienteActualizado;
             header('Location: ../datos.php?error=02'); //Error interno
@@ -45,7 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $expedienteActualizado = $expedienteDAO->actualizarTutorCarrera($idPersona,$idUnica,$idCarrera);
 
             if ($personaActualizada && $expedienteActualizado) {
-                header('Location: ../datos.php?success=true');
+                header('Location: ../datos.php?error=false');
             } else {
                 echo $expedienteActualizado;
                 header('Location: ../datos.php?error=02'); //Error interno

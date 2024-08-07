@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($usuario) {
         header('Location: ../menu.php'); //acceso
     } else {
-        header('Location: ../index.php?error=04'); //usuario o contraseña incorrecto
+        header('Location: ../index.php?error=badAuentication'); //usuario o contraseña incorrecto
     }
 
 } else {

@@ -17,7 +17,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $expedienteActualizado = $expedienteDAO->actualizarDatosEm($idPersona,$nss,$clinica,$direccion);
 
     if ($expedienteActualizado) {
-        header('Location: ../emergencia.php?success=true');
+        header('Location: ../emergencia.php?error=false');
     } else {
         echo $expedienteActualizado;
         header('Location: ../emergencia.php?error=02'); //Error interno

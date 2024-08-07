@@ -52,10 +52,25 @@ height: auto;
 margin: 0 auto 20px;
 }
 
-.card .profile-foto {
+.profile-foto-container {
+    width: 300px; 
+    height: 300px; 
+    overflow: hidden;
+    position: relative;
     border-radius: 50%;
     filter: drop-shadow(0 0 0.70rem #c8f8b1);
+    margin: 0 auto 20px;
 }
+
+.profile-foto-container img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    width: auto;
+    transform: translate(-50%, -50%);
+}
+
 
 .cont {
     display: flex;

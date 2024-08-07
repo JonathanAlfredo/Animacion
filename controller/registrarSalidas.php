@@ -29,7 +29,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
     
     
-    header('Location: ../evento.php?success=true');
+    header('Location: ../evento.php?error=false');
     exit;
 
        

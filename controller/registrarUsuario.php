@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $idTipoPersona = $_POST['idTipoPersona'];
 
     if ($pass != $passConf) {
-        header('Location: ../registro.php?error=01'); //Las contraseñas no coinciden
+        header('Location: ../registro.php?error=badPassAuth'); //Las contraseñas no coinciden
         exit;
     }
 
@@ -27,14 +27,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $expedienteInsertado = $expedienteDAO->insertarExpediente($idPersona);
 
         if ($usuarioInsertado && $expedienteInsertado) {
-            header('Location: ../index.php?success=true');
+            header('Location: ../index.php?error=false');
         } else {
             header('Location: ../registro.php?error=02'); //Error interno, problema al insertar usuario
         }
 
     } else {
         echo $personaInsertada;
-        header('Location: ../registro.php?error=03'); //Esta persona ya esta registrada
+        header('Location: ../registro.php?error=userAlreadyExists'); //Esta persona ya esta registrada
     }
 
 } else {

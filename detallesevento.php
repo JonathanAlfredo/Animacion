@@ -56,7 +56,6 @@ $idEvento = isset($_GET['idEvento']) ? $_GET['idEvento'] : 'Desconocido';
         
             $datosAsistentes = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
-
         } catch (PDOException $e) {
             echo 'Query failed: ' . $e->getMessage();
         }
@@ -84,18 +83,19 @@ $idEvento = isset($_GET['idEvento']) ? $_GET['idEvento'] : 'Desconocido';
             
                 <?php
                 if ($datosAsistentes) {
-                    foreach($datosAsistentes as $asistente);
-
-                    echo "
-                        <div class='report-card'>
-                            <div class='report-details'>
-                                <p><strong>Asistente:</strong> ".$asistente['nombre']."</p>
-                                <p><strong>Hora de entrada:</strong> ".$asistente['entrada']."</p>
-                                <p><strong>Hora de salida:</strong> ".$asistente['salida']."</p>
-                            </div>    
-                        </div>
+                    foreach($datosAsistentes as $asistente) {
+                        echo "
+                            <div class='report-card'>
+                                <div class='report-details'>
+                                    <p><strong>Asistente:</strong> ".$asistente['nombre']."</p>
+                                    <p><strong>Hora de entrada:</strong> ".$asistente['entrada']."</p>
+                                    <p><strong>Hora de salida:</strong> ".$asistente['salida']."</p>
+                                </div>    
+                            </div>
                         ";
+                    }
                 }
+                
                     
                 ?>
         </div>

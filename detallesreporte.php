@@ -1,4 +1,5 @@
 <?php
+include 'controller/reporteDAO.php';
 include 'controller/sesionManager.php';
 require_once 'controller/Database.php';
 
@@ -17,11 +18,21 @@ $idReporte = isset($_GET['idReporte']) ? $_GET['idReporte'] : 'Desconocido';
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/layout.css">
     <link rel="stylesheet" href="assets/css/components.css">
-    <script src="https://maps.googleapis.com/maps/api/js?key=TU_API_KEY&callback=initMap" async defer></script>
 
 </head>
 <body>
     <?php
+
+        $reporteDAO = new ReporteDAO();
+
+        $reporteActualizado = $reporteDAO->actualizarEstado($idReporte, "Leido");
+
+        if ($reporteActualizado) {
+        } else {
+            echo $reporteActualizado;
+        }
+
+
 
         try {
             $idReportante = $_SESSION['idPersona'];

@@ -1,7 +1,11 @@
 <?php
+require_once 'controller/Database.php';
 include 'controller/sesionManager.php';
 include 'controller/usuarioDAO.php';
 include 'controller/personaDAO.php';
+
+$pdo = Database::getInstance();
+
 
 verifySesion(false);
 
@@ -26,7 +30,46 @@ $tipo = $personaDAO->obtenerTipo($_SESSION['idPersona']);
 
 </head>
 <body>
-    
+
+    <script src="assets/js/notification.js"></script>
+
+
+    <?php
+        try {
+            $sql = "
+                SELECT CONCAT(p.nombre,' ',p.apPaterno,' ',p.apMaterno) as nombre,
+                r.idReporte, t.tipo, r.fechaHora, r.comentarios
+                FROM reporte r
+                JOIN tipoincidente t ON t.idTipoIncidente = r.idTipoIncidente
+                JOIN persona p ON p.idPersona = r.idPersona
+                WHERE r.estado = 'Nuevo'
+            ";
+            $stmt = $pdo->prepare($sql);
+            $stmt->execute();
+            $datosReporte = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            echo 'Query failed: ' . $e->getMessage();
+        }
+
+        
+    ?>
+
+    <script>
+            <?php
+
+                foreach ($datosReporte as $datosReporte){
+                    echo "
+
+                    mostrarNotificacion();
+                    
+                    ";
+
+                }
+            ?>
+
+    </script>
+
+
     <div class="container  centered">
         
 

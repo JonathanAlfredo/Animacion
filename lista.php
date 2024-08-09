@@ -23,11 +23,11 @@ $pdo = Database::getInstance();
         try {
             $sql = "
                 SELECT CONCAT(p.nombre,' ',p.apPaterno,' ',p.apMaterno) as nombre,
-                r.idReporte, t.tipo, r.fechaHora, r.comentarios
+                r.idReporte, t.tipo, r.fechaHora, r.comentarios, r.estado
                 FROM reporte r
                 JOIN tipoincidente t ON t.idTipoIncidente = r.idTipoIncidente
                 JOIN persona p ON p.idPersona = r.idPersona
-                WHERE r.estado = 'Nuevo'
+                ORDER BY r.fechaHora DESC
             ";
             $stmt = $pdo->prepare($sql);
             $stmt->execute();
@@ -60,6 +60,8 @@ $pdo = Database::getInstance();
                                 <p><strong>Fecha:</strong> ".$row['fechaHora']."</p>
                                 <p><strong>Alumno:</strong> ".$row['nombre']."</p>
                                 <p><strong>Descripción:</strong> ".substr($row['comentarios'], 0, 50)."...</p>
+                                <p><strong>Estado:</strong> ".$row['estado']."</p>
+
                             </div>
                             <form action='detallesreporte.php' class='form' >
                                 <input type='hidden' name='idReporte' value='".$row['idReporte']."'>

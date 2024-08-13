@@ -1,3 +1,11 @@
+Notification.requestPermission().then(permission => {
+    if (permission === 'granted') {
+        console.log('Permiso concedido');
+    } else {
+        console.log('Permiso denegado');
+    }
+});
+
 // Función para mostrar la notificación
 function mostrarNotificacion(registration) {
     if (!registration) {
